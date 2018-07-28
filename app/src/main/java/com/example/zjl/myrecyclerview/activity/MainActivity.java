@@ -2,6 +2,7 @@ package com.example.zjl.myrecyclerview.activity;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -62,6 +63,18 @@ public class MainActivity extends AppCompatActivity {
         }else {
             Log.e("TAG", "当前是Dalvik虚拟机");
         }
+
+        initListener();
+    }
+
+    private void initListener() {
+        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,RecyclerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private boolean getIsArtInUse() {

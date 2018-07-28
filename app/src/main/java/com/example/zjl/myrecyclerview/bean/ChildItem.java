@@ -32,4 +32,6 @@ public class ChildItem {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+
 }
