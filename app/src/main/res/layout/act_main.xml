@@ -11,8 +11,22 @@
         android:layout_height="wrap_content"
         android:text="界面跳转"/>
 
+    <Button
+        android:layout_below="@+id/btn"
+        android:id="@+id/btn_lock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="界面Lock"/>
+
+    <Button
+        android:layout_below="@+id/btn_lock"
+        android:id="@+id/surface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="扫描界面"/>
+
     <ExpandableListView
-        android:layout_below="@id/btn"
+        android:layout_below="@id/surface"
         android:id="@+id/expand_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
