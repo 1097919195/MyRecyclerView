@@ -69,5 +69,7 @@ public class SurfaceViewActivity extends Activity {
             }
         });
         scanLine.setAlpha(0.45f);
+
+
     }
 }
