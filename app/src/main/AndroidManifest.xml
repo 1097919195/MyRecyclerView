@@ -29,6 +29,8 @@
         <activity android:name=".activity.SurfaceViewActivity"
             android:screenOrientation="landscape"/>
 
+        <activity android:name=".activity.AnimActivity" />
+
         <receiver
             android:name=".receiver.LockReceiver"
             android:description="@string/app_name"

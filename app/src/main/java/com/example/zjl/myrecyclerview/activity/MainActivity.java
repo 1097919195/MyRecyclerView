@@ -132,6 +132,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.animBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AnimActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private boolean getIsArtInUse() {

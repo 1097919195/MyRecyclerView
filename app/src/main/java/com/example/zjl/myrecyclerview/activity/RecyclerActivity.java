@@ -9,8 +9,10 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
+import android.widget.TextView;
 
 import com.example.zjl.myrecyclerview.R;
 import com.example.zjl.myrecyclerview.adapter.CalculatorAdapter;
@@ -30,14 +32,28 @@ public class RecyclerActivity extends AppCompatActivity {
     List<String> num = Arrays.asList(AppApplication.getAppContext().getResources().getStringArray(R.array.Ca_num));
     List<String> type = Arrays.asList(AppApplication.getAppContext().getResources().getStringArray(R.array.Ca_type));
 
+
+    TextView popAnim;
+    TextView recycler;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_recycler);
 
         recyclerView = (RecyclerView) findViewById(R.id.rcy);
+        popAnim = findViewById(R.id.popAnim);
+        recycler = findViewById(R.id.recycler);
 
         initAdapter();
+        initAnim();
+    }
+
+    private void initAnim() {
+        Animation scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.pop);
+        popAnim.setAnimation(scaleAnimation);
+
+        Animation scaleAnimation2 = AnimationUtils.loadAnimation(this, R.anim.recycler);
+        recycler.setAnimation(scaleAnimation2);
     }
 
     private void initAdapter() {

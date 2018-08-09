@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MyRecyclerView.iml" filepath="$PROJECT_DIR$/MyRecyclerView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaLib/javaLib.iml" filepath="$PROJECT_DIR$/javaLib/javaLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testLib/testLib.iml" filepath="$PROJECT_DIR$/testLib/testLib.iml" />
     </modules>
   </component>
 </project>

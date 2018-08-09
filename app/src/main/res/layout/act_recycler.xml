@@ -16,4 +16,26 @@
         android:layoutAnimation="@anim/layout_animation_slide_in_bottom">
 
     </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:id="@+id/popAnim"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/rcy"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:background="@color/colorPrimary"
+        android:text="欢迎"/>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:id="@+id/recycler"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/popAnim"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:background="@color/colorPrimary"
+        android:text="000000"/>
 </RelativeLayout>
