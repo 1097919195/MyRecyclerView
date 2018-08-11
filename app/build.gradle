@@ -41,4 +41,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.4.0'
 
     compile project(":testLib")
+
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    compile 'com.makeramen:roundedimageview:2.3.0'
 }

@@ -3,10 +3,15 @@ package com.example.zjl.myrecyclerview.activity;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -29,6 +34,39 @@ public class AnimActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(AnimActivity.this, "点击了图片", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        initEdit();
+
+    }
+
+    private void initEdit() {
+        final EditText et = (EditText)findViewById(R.id.edit);
+        et.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);//只能输入邮箱地址
+
+        final Drawable dr = getResources().getDrawable(R.drawable.background);
+        dr.setBounds(0, 0, 10, 10); //必须设置大小，否则不显示
+
+        et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+            @Override
+            public void afterTextChanged(Editable arg0) {
+                if (et.getText().length() > 0) { //"[a-zA-Z0-9._-]+@[a-z]+.[a-z]+"
+
+                    if (!et.getText().toString().matches("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+")) {
+                        et.setError("请输入正确的邮箱地址", dr);
+                    }
+                } else {
+                    et.setHint("请输入邮箱地址");
+                }
             }
         });
     }
