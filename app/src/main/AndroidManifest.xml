@@ -6,6 +6,28 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="zjl.content.PROVIDER"/>
+    <uses-permission android:name="zjl.content.PROVIDER.READ"/>
+    <uses-permission android:name="zjl.content.PROVIDER.WRITE"/>
+
+    <!--声明本应用 可允许通信的权限-->
+    <permission android:name="zjl.content.PROVIDER"
+        android:description="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:label="normal_label"
+        android:protectionLevel="normal" />
+    <!--细分读  写权限如下，但本Demo直接采用全权限-->
+    <permission android:name="zjl.content.PROVIDER.WRITE"
+        android:description="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:label="normal_label"
+        android:protectionLevel="normal"/>
+    <permission android:name="zjl.content.PROVIDER.READ"
+        android:description="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:label="normal_label"
+        android:protectionLevel="normal"/>
+
     <application
         android:name=".app.AppApplication"
         android:allowBackup="true"
