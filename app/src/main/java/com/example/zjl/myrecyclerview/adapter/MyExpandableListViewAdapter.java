@@ -61,13 +61,17 @@ public class MyExpandableListViewAdapter extends BaseExpandableListAdapter{
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         Log.e("childData",groupPosition+"  "+childPosition+"  "+mData.size());
+        ChildViewHolder holder;
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_expand_child, null);
+            holder = new ChildViewHolder();
+            holder.mIcon = (ImageView) convertView.findViewById(R.id.img);
+            holder.mChildName = (TextView) convertView.findViewById(R.id.item_name);
+            holder.mDetail = (TextView) convertView.findViewById(R.id.item_details);
+            convertView.setTag(holder);
+        }else {
+            holder = (ChildViewHolder) convertView.getTag();
         }
-        ChildViewHolder holder = new ChildViewHolder();
-        holder.mIcon = (ImageView) convertView.findViewById(R.id.img);
-        holder.mChildName = (TextView) convertView.findViewById(R.id.item_name);
-        holder.mDetail = (TextView) convertView.findViewById(R.id.item_details);
         holder.mIcon.setBackgroundResource(getChild(groupPosition,childPosition).getResId());
         holder.mChildName.setText(getChild(groupPosition, childPosition).getName());
         holder.mDetail.setText(getChild(groupPosition, childPosition).getDetail());
@@ -99,12 +103,18 @@ public class MyExpandableListViewAdapter extends BaseExpandableListAdapter{
 
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+        GroupViewHolder holder;
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.item_expand_group, null);
+            holder = new GroupViewHolder();
+            holder.mGroupName = (TextView) convertView.findViewById(R.id.group_name);
+            holder.mGroupCount = (TextView) convertView.findViewById(R.id.group_count);
+            convertView.setTag(holder);
+        }else {
+            holder = (GroupViewHolder) convertView.getTag();
         }
-        GroupViewHolder holder = new GroupViewHolder();
-        holder.mGroupName = (TextView) convertView.findViewById(R.id.group_name);
-        holder.mGroupCount = (TextView) convertView.findViewById(R.id.group_count);
+
+
         holder.mGroupName.setText(mGroupItems.get(groupPosition));
         if (mData.size()<=groupPosition||mData.get(groupPosition).isEmpty()) {
             holder.mGroupCount.setText("0");
