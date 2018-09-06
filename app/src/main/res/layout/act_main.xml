@@ -32,8 +32,15 @@
         android:layout_height="wrap_content"
         android:text="动画界面"/>
 
+    <Button
+        android:layout_below="@+id/animBtn"
+        android:id="@+id/treeListAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="树形list界面"/>
+
     <ExpandableListView
-        android:layout_below="@id/animBtn"
+        android:layout_below="@id/treeListAct"
         android:id="@+id/expand_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

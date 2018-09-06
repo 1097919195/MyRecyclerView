@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     ChildItem item = new ChildItem();
     ChildItem item1 = new ChildItem();
     ChildItem item2 = new ChildItem();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,20 +54,20 @@ public class MainActivity extends AppCompatActivity {
         itemList.add(items);
         itemList.add(items1);
         itemList.add(items2);
-        adapter = new MyExpandableListViewAdapter(this,groupItems,itemList);
+        adapter = new MyExpandableListViewAdapter(this, groupItems, itemList);
         expandableListView.setAdapter(adapter);
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                Toast.makeText(MainActivity.this,String.valueOf(groupPosition)+"  "+String.valueOf(childPosition),Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, String.valueOf(groupPosition) + "  " + String.valueOf(childPosition), Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
 
         if (getIsArtInUse()) {
             Log.e("TAG", "当前是ART虚拟机");
-        }else {
+        } else {
             Log.e("TAG", "当前是Dalvik虚拟机");
         }
 
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     private void initFlie() {
         try {
             //写(没有文件会自动创建)
-            FileOutputStream out = new FileOutputStream(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+"logTest.txt");
+            FileOutputStream out = new FileOutputStream(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "logTest.txt");
             String s = "hahahahahaha";
             try {
                 out.write(s.getBytes());
@@ -89,21 +90,21 @@ public class MainActivity extends AppCompatActivity {
 
 
             //读
-            FileInputStream in = new FileInputStream(Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator+"logTest.txt");
+            FileInputStream in = new FileInputStream(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "logTest.txt");
             int length;
             byte[] bytes = new byte[1024];
             try {
                 while ((length = in.read(bytes)) != -1) {
-                    Log.e("asdf Int",String.valueOf(length));
-                    Log.e("asdf Read",new String(bytes, 0, length));//将数据变为字符串输出
+                    Log.e("asdf Int", String.valueOf(length));
+                    Log.e("asdf Read", new String(bytes, 0, length));//将数据变为字符串输出
                 }
             } catch (IOException e) {
-                Log.e("asdf2",e.getMessage());
+                Log.e("asdf2", e.getMessage());
                 e.printStackTrace();
             }
 
         } catch (FileNotFoundException e) {
-            Log.e("asdf1",e.getMessage());
+            Log.e("asdf1", e.getMessage());
             e.printStackTrace();
         }
     }
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,RecyclerActivity.class);
+                Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
                 startActivity(intent);
             }
         });
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_lock).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,LockActivity.class);
+                Intent intent = new Intent(MainActivity.this, LockActivity.class);
                 startActivity(intent);
             }
         });
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.surface).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,SurfaceViewActivity.class);
+                Intent intent = new Intent(MainActivity.this, SurfaceViewActivity.class);
                 startActivity(intent);
             }
         });
@@ -136,7 +137,15 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.animBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,AnimActivity.class);
+                Intent intent = new Intent(MainActivity.this, AnimActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.treeListAct).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TreeListActivity.class);
                 startActivity(intent);
             }
         });
