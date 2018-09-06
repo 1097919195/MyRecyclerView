@@ -39,8 +39,15 @@
         android:layout_height="wrap_content"
         android:text="树形list界面"/>
 
+    <Button
+        android:layout_below="@+id/treeListAct"
+        android:id="@+id/clipAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="clip界面"/>
+
     <ExpandableListView
-        android:layout_below="@id/treeListAct"
+        android:layout_below="@id/clipAct"
         android:id="@+id/expand_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

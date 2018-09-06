@@ -149,6 +149,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.clipAct).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ClipActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private boolean getIsArtInUse() {
