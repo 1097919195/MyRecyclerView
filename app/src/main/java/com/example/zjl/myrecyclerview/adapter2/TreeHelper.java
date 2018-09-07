@@ -82,8 +82,8 @@ public class TreeHelper {
             Class<? extends Object> clazz = t.getClass();
             Field[] declaredFields = clazz.getDeclaredFields();
             for (Field f : declaredFields) {
-                if (f.getAnnotation(TreeNodeId.class) != null) {
-                    f.setAccessible(true);
+                if (f.getAnnotation(TreeNodeId.class) != null) {//获取注解实例对象
+                    f.setAccessible(true);//true 允许通过反射访问该字段
                     id = f.getInt(t);
                 }
                 if (f.getAnnotation(TreeNodePid.class) != null) {
