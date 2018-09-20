@@ -54,6 +54,7 @@
         <activity android:name=".activity.AnimActivity" />
         <activity android:name=".activity.TreeListActivity" />
         <activity android:name=".activity.ClipActivity" />
+        <activity android:name=".activity.ListViewSectionActivity" />
 
         <receiver
             android:name=".receiver.LockReceiver"
